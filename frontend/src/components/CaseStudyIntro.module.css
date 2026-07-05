@@ -1,0 +1,45 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(31, 41, 55, 0.1);
+    border-bottom: 1px solid rgba(31, 41, 55, 0.1);
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.label {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent, var(--color-ink));
+    margin: 0;
+}
+
+.text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-ink);
+    opacity: 0.85;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .intro {
+        padding: 1rem 0;
+        gap: 1.25rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+}

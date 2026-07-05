@@ -1,0 +1,15 @@
+:root {
+    --color-bg: #FAF7F2;
+    --color-ink: #1F2937;
+    --color-ready: #34D399;
+    --color-almost: #FBBF24;
+    --color-needs-work: #F87171;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+    background: var(--color-bg);
+    margin: 0;
+}

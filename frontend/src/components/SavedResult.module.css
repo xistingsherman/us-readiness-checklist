@@ -1,0 +1,48 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.score {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--color-ink);
+    margin: 0;
+}
+
+.tier {
+    font-family: var(--font-mono, monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent, var(--color-ink));
+    margin: 0.25rem 0 1.5rem;
+}
+
+.meta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+
+.itemList {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.itemList li {
+    font-family: var(--font-body);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(31, 41, 55, 0.08);
+}
+
+.message {
+    text-align: center;
+    padding: 3rem;
+    font-family: var(--font-body);
+}

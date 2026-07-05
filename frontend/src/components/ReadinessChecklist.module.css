@@ -1,0 +1,228 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.layout {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.gaugeColumn {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.checklistColumn {
+    flex: 1;
+}
+
+.category {
+    margin-bottom: 2rem;
+}
+
+.categoryTitle {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ink);
+    opacity: 0.6;
+    margin: 0 0 0.75rem;
+}
+
+.resetButton {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-ink);
+    background: transparent;
+    border: 1px solid var(--color-ink);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin: 0.5rem;
+    padding: 0.75rem;
+}
+
+.resetButton:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.mobileScoreBadge {
+    display: none;
+}
+
+.NeedsWork {
+    border-color: var(--color-needs-work);
+}
+
+.AlmostThere {
+    border-color: var(--color-almost);
+}
+
+.Ready {
+    border-color: var(--color-ready);
+    animation: badgePulse 0.5s ease-out;
+}
+
+.statusArea {
+    min-height: 2.5rem;
+    min-width: 17rem;
+    /* reserves space whether or not a message is present */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.saveButton {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-bg);
+    background: var(--color-ink);
+    border: none;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin: 0.5rem;
+    padding: 0.75rem;
+    min-width: 8rem;
+}
+
+.saveButton:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+.saveButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.shareLink {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--color-ink);
+    word-break: break-all;
+}
+
+.shareLink a {
+    color: var(--color-accent, var(--color-ink));
+    white-space: nowrap;
+}
+
+.errorMessage {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-needs-work);
+    text-align: center;
+}
+
+
+@keyframes badgePulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 0 16px rgba(61, 90, 128, 0.4);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobileScoreBadge {
+        transition: none;
+    }
+
+    .Ready {
+        animation: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .gaugeColumn {
+        position: static;
+        width: 100%;
+    }
+
+    .container {
+        padding-top: 4.5rem;
+    }
+
+    .checklistColumn {
+        margin-top: 1rem;
+    }
+
+    .mobileScoreBadge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--color-bg);
+        border-width: 3px;
+        border-style: solid;
+        border-color: var(--color-needs-work);
+        color: var(--color-ink);
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 30;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: border-color 0.4s ease, transform 0.3s ease;
+    }
+
+    .mobileScoreBadge.NeedsWork {
+        border-color: var(--color-needs-work);
+    }
+
+    .mobileScoreBadge.AlmostThere {
+        border-color: var(--color-almost);
+    }
+
+    .mobileScoreBadge.Ready {
+        border-color: var(--color-ready);
+        animation: badgePulse 0.5s ease-out;
+    }
+
+    .badgeScore {
+        transition: opacity 0.2s ease;
+    }
+
+    .actions {
+        display: flex;
+        gap: 0.5rem;
+        min-width: 17rem;
+    }
+
+    .actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+
+}
